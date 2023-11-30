@@ -1,222 +1,109 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Sécurité alimentaire</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="images/images.jpg" type="image/jpg">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   
+    <title>Sécurité Alimentaire - Page de Grade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin-right: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur le Site de Sécurité Alimentaire</h1>
+        <form id="loginForm">
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
 
-<body class="is-preload">
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
 
-    <div id="wrapper">
+            <button type="button" onclick="login()">Connexion</button>
+        </form>
 
-        <!-- Main -->
-        <div id="main">
-            <div class="inner">
-
-                <!-- Header -->
-                <header id="header">
-                    <a href="index.html" class="logo">
-                        <strong>Elaboré et défendu par l’élève du cycle supérieur première période</strong> ABASSI Yosra
-                    </a>
-                    <ul class="icons">
-                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-                    </ul>
-                </header>
-
-                <!-- Banner -->
-                <section id="banner">
-
-                    <!-- Formulaire de calcul de risque -->
-                    <section>
-                        <header class="major">
-                            <h2>Calcul de risque de sécurité alimentaire</h2>
-                        </header>
-                        <form id="riskCalculationForm">
-                            <label for="riskType">Sélectionnez un type de risque :</label>
-                            <select id="riskType">
-                                <option value="risque1">Risque 1</option>
-                                <option value="risque2">Risque 2</option>
-                                <option value="risque3">Risque 3</option>
-                                <option value="risque4">Risque 4</option>
-                                <option value="risque5">Risque 5</option>
-                            </select>
-                            <br>
-                            <label for="probability">Probabilité (P) :</label>
-                            <input type="number" id="probability" step="0.01">
-                            <br>
-                            <label for="impact">Impact (I) :</label>
-                            <input type="number" id="impact" step="0.01">
-                            <br>
-                            <br>
-                            <button type="button" onclick="calculateRisk()">Calculer le risque</button>
-                        </form>
-                        <div id="riskResult"></div>
-                        <div class="chart-container">
-                            <canvas id="riskChart"></canvas>
-                        </div>
-                    </section>
-                </section>
-            </div>
-        </div>
-		<div id="sidebar">
-			<div class="inner">
-
-				<!-- Search -->
-					<section id="search" class="alt">
-						<form method="post" action="#">
-							<input type="text" name="query" id="query" placeholder="Recherche" />
-						</form>
-					</section>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<header class="major">
-							<h2>Menu</h2>
-						</header>
-						<ul>
-							<li><a href="index.html">Page d'accueil</a></li>
-							<li><a href="#">Tableau de bord</a></li>
-							<li><a href="#">Détection en temps réel </a></li>
-							<li>
-								<span class="opener">Cartographie des routes</span>
-								<ul>
-									<li><a href="#">Affichage de la carte </a></li>
-									<li><a href="#">Filtres </a></li>
-									<li><a href="#">Rapports de défauts</a></li>
-									<li><a href="#">Exportation de données</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Données SIG</a></li>
-							<li><a href="#">Analyse des données</a></li>
-							<li><a href="#">Les points noirs et bleus</a></li>
-							<li>
-								<span class="opener">Notifications </span>
-								<ul>
-									<li><a href="#">Paramètres de notification</a></li>
-									<li><a href="#">Alertes en temps réel</a></li>
-									<li><a href="#">Historique des notifications</a></li>
-									<li><a href="#">Gestion des destinataires</a></li>
-								</ul>
-							</li>
-							
-						</ul>
-					</nav>
-
-				
-
-				<!-- Section -->
-					<section>
-						<header class="major">
-							<h2>Objectifs</h2>
-						</header>
-
-
-
-
-
-						<p>Améliorer la sécurité routière en identifiant rapidement les défauts des routes</p>
-<p>Faciliter la planification de la maintenance routière en fournissant des informations précises et en temps réel</p>
-<p>Optimiser l'utilisation des ressources en réduisant les coûts de maintenance inutiles</p>
-						<ul class="contact">
-							<li class="icon solid fa-envelope"><a href="#">yosraabassi2020@gmail.com</a></li>
-							<li class="icon solid fa-phone">(+216) 51-761-607</li>
-							<li class="icon solid fa-home">Tunis<br />
-							   </li>
-						</ul>
-					</section>
-					<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; 2023 Tous les droits sont réservés.  <a href="#">ABASSI Yosra</a>.</p>
-					</footer>
+        <p id="errorMessage"></p>
     </div>
 
+    <img src="images/haccp.jpg" alt="Image Sécurité Alimentaire">
+
+    <footer>
+        <p>&copy; 2023 Sécurité Alimentaire. Tous droits réservés. | <a href="privacy.html">Politique de confidentialité</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+
     <script>
-        const results = []; // Tableau pour stocker les résultats
+        // Liste des utilisateurs et mots de passe (à des fins d'illustration seulement)
+        const users = [
+            { username: "yosra", password: "123" },
+            { username: "utilisateur2", password: "motdepasse2" },
+            // Ajoutez d'autres utilisateurs au besoin
+        ];
 
-        function calculateRisk() {
-            const riskType = document.getElementById("riskType").value;
-            const probability = parseFloat(document.getElementById("probability").value);
-            const impact = parseFloat(document.getElementById("impact").value);
+        function login() {
+            // Récupérer les valeurs de l'identifiant et du mot de passe
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
 
-            if (!isNaN(probability) && !isNaN(impact)) {
-                const risk = probability * impact;
-                results.push({ type: riskType, value: risk });
+            // Vérifier si l'identifiant et le mot de passe sont corrects
+            const user = users.find(u => u.username === username && u.password === password);
 
-                // Triez le tableau par valeur de risque décroissante
-                results.sort((a, b) => b.value - a.value);
-
-                displaySortedResults(results);
+            if (user) {
+                // Rediriger vers la page souhaitée après la connexion réussie
+                window.location.href = "data.html";
             } else {
-                document.getElementById("riskResult").innerHTML = "Veuillez entrer des valeurs valides pour la probabilité et l'impact.";
+                // Afficher un message d'erreur
+                document.getElementById("errorMessage").innerHTML = "Nom d'utilisateur ou mot de passe incorrect.";
             }
         }
-
-        function updateChart(sortedResults) {
-            const riskLabels = sortedResults.map((result) => result.type);
-            const riskValues = sortedResults.map((result) => result.value);
-
-            if (riskChart) {
-                riskChart.destroy(); // Détruit le graphique existant pour éviter les doublons
-            }
-
-            // Obtenez l'élément du graphique à barres
-            const ctx = document.getElementById("riskChart").getContext("2d");
-
-            // Configuration des couleurs personnalisées
-            const riskColors = [
-                "#e91e63", "#33bcff ", "#ffeb3b", "orange", "purple" // Vous pouvez personnaliser ces couleurs
-            ];
-
-            // Mettez à jour le graphique
-            riskChart = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: riskLabels,
-                    datasets: [
-                        {
-                            label: "Risque",
-                            data: riskValues,
-                            backgroundColor: riskColors,
-                            borderWidth: 1,
-                        },
-                    ],
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                        },
-                    },
-                },
-            });
-        }
-
-        function displaySortedResults(sortedResults) {
-            const resultElement = document.getElementById("riskResult");
-            resultElement.innerHTML = "Résultats triés par ordre croissant de risque :<br>";
-            for (const result of sortedResults) {
-                resultElement.innerHTML += `Type de risque : ${result.type}, Risque : ${result.value}<br>`;
-            }
-
-            // Mettez à jour le graphique
-            updateChart(sortedResults);
-        }
-
-        // Appelez la mise à jour du graphique pour l'afficher initialement
-        let riskChart; // Déclarer la variable du graphique à l'extérieur des fonctions
-        updateChart(results);
     </script>
-
 </body>
-
 </html>
