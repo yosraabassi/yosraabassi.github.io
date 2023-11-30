@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Sécurité alimentaire</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="images/haccp.jpg" type="image/jpg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+</head>
+
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo">
+                        <strong>Elaboré et défendu par l’élève du cycle supérieur première période</strong> ABASSI Yosra
+                    </a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Banner -->
+                <section id="banner">
+
+                    <!-- Formulaire de calcul de risque -->
+                    <section>
+                        <header class="major">
+                            <h2>Calcul de risque de sécurité alimentaire</h2>
+                        </header>
+                        <form id="riskCalculationForm">
+                            <label for="riskType">Sélectionnez un type de risque :</label>
+                            <select id="riskType">
+                                <option value="risque1">Intoxications alimentaire</option>
+                                <option value="risque2">Contamination bacterienne</option>
+                                <option value="risque3">Le monoplolisme</option>
+                                <option value="risque4">Fraude alimentaires</option>
+                                <option value="risque5">Risque d'approvisionnement</option>
+                            </select>
+                            <br>
+                            <label for="probability">Probabilité (P) :</label>
+                            <input type="number" id="probability" step="1" min="1" max="5">
+                            <br>
+                            <label for="impact">Impact (I) :</label>
+                            <input type="number" id="impact" step="1" min="1" max="5">
+                            <br>
+                            
+                            <br>
+                            <button type="button" onclick="calculateRisk()">Calculer le risque</button>
+                        </form>
+                        <div id="riskResult"></div>
+                        <div class="chart-container">
+                            <canvas id="riskChart"></canvas>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+					<section id="search" class="alt">
+						<form method="post" action="#">
+							<input type="text" name="query" id="query" placeholder="Recherche" />
+						</form>
+					</section>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="login.html">Page d'accueil</a></li>
+							
+							<li><a href="data.html">Tableau de bord  </a></li>
+							
+					         <li><a href="#">Exportation de données</a></li>
+							<li><a href="#">Analyse des données</a></li>
+							
+							
+						</ul>
+					</nav>
+
+				
+
+				<!-- Section -->
+					<section>
+						<header class="major">
+							<h2>Objectifs</h2>
+						</header>
+
+
+
+
+
+						<p>Renforcer la sécurité alimentaire en identifiant rapidement 
+                            les défauts des procédures, contribuant ainsi à une évaluation plus
+                             précise du calcul des risques liés à la qualité et à la salubrité
+                              des produits.</p>
+                <p>Optimiser l'utilisation des ressources en réduisant les coûts liés à la sécurité alimentaire, tout en intégrant une approche proactive
+                     dans le calcul des risques pour une gestion plus efficace des processus</p>
+						<ul class="contact">
+							<li class="icon solid fa-envelope"><a href="#">yosraabassi2020@gmail.com</a></li>
+							<li class="icon solid fa-phone">(+216) 51-761-607</li>
+							<li class="icon solid fa-home">Tunis<br />
+							   </li>
+						</ul>
+					</section>
+					<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; 2023 Tous les droits sont réservés.  <a href="#">ABASSI Yosra</a>.</p>
+					</footer>
+    </div>
+
+    <script>
+        const results = []; // Tableau pour stocker les résultats
+
+        function calculateRisk() {
+            const riskType = document.getElementById("riskType").value;
+            const probability = parseFloat(document.getElementById("probability").value);
+            const impact = parseFloat(document.getElementById("impact").value);
+
+            if (!isNaN(probability) && !isNaN(impact)) {
+                const risk = probability * impact;
+                results.push({ type: riskType, value: risk });
+
+                // Triez le tableau par valeur de risque décroissante
+                results.sort((a, b) => b.value - a.value);
+
+                displaySortedResults(results);
+            } else {
+                document.getElementById("riskResult").innerHTML = "Veuillez entrer des valeurs valides pour la probabilité et l'impact.";
+            }
+        }
+
+        function updateChart(sortedResults) {
+            const riskLabels = sortedResults.map((result) => result.type);
+            const riskValues = sortedResults.map((result) => result.value);
+
+            if (riskChart) {
+                riskChart.destroy(); // Détruit le graphique existant pour éviter les doublons
+            }
+
+            // Obtenez l'élément du graphique à barres
+            const ctx = document.getElementById("riskChart").getContext("2d");
+
+            // Configuration des couleurs personnalisées
+            const riskColors = [
+                "#e91e63", "#33bcff ", "#ffeb3b", "orange", "purple" // Vous pouvez personnaliser ces couleurs
+            ];
+
+            // Mettez à jour le graphique
+            riskChart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: riskLabels,
+                    datasets: [
+                        {
+                            label: "Risque",
+                            data: riskValues,
+                            backgroundColor: riskColors,
+                            borderWidth: 1,
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            });
+        }
+
+        function displaySortedResults(sortedResults) {
+            const resultElement = document.getElementById("riskResult");
+            resultElement.innerHTML = "Résultats triés par ordre croissant de risque :<br>";
+            for (const result of sortedResults) {
+                resultElement.innerHTML += `Type de risque : ${result.type}, Risque : ${result.value}<br>`;
+            }
+
+            // Mettez à jour le graphique
+            updateChart(sortedResults);
+        }
+
+        // Appelez la mise à jour du graphique pour l'afficher initialement
+        let riskChart; // Déclarer la variable du graphique à l'extérieur des fonctions
+        updateChart(results);
+    </script>
+
+</body>
+
+</html>
