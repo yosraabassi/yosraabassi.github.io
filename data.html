@@ -192,7 +192,7 @@
             const resultElement = document.getElementById("riskResult");
             resultElement.innerHTML = "Résultats triés par ordre croissant de risque :<br>";
             for (const result of sortedResults) {
-                resultElement.innerHTML += `Type de risque : ${result.type}, Risque : ${result.value}<br>`;
+                resultElement.innerHTML += `Type de risque : ${result.type}: ${result.value}<br>`;
             }
 
             // Mettez à jour le graphique
