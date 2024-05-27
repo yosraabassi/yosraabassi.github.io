@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal || www.codingnepalweb.com -->
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Agence des Ports et Installations de Pêche</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+       #slideshow {
+            position: relative;
+            width: 5000px; /* Ajustez la largeur selon vos besoins */
+            height: 500px; /* Ajustez la hauteur selon vos besoins */
+            overflow: hidden;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             padding: 20px 30px;
+            max-width: 800px;
+            
+            margin-left: 350px;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+         .content {
+            padding: 20px 30px;
+            max-width: 800px;
+            margin-top: 10px;
+            margin-left: 350px;
+           
+            text-align: justify;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .content ul {
+            padding-left: 20px;
+        }
+        .content ul li {
+            margin-bottom: 10px;
+        }
+        
+        .carousel-inner img {
+    max-height: 500px; /* Réduisez cette valeur pour des images plus petites */
+    object-fit: cover; /* Ajuste les images pour qu'elles couvrent l'espace disponible */
+}
+table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="logo_item">
+        <i class="bx bx-menu" id="sidebarOpen"></i>
+        <img src="logo.png" alt=""></i>APIP
+      </div>
+
+     <div class="search_bar">
+      <div style="text-align: center; margin-left: 100px;">
+    <p style="color: var(--blue-color); font-size: 10px; font-weight: bold; ">République Tunisienne</p>
+    <p style="color: var(--blue-color); font-size: 10px; font-weight: bold;">Ministère de l'Agriculture, des Ressources Hydrauliques et de la Pêche Maritime</p>
+    <p style="color: var(--blue-color); font-size: 10px; font-weight: bold;">Agence des Ports et des Installations de Pêche</p>
+</div>
+
+
+
+      </div>
+
+      <div class="navbar_content">
+        <i class="bi bi-grid"></i>
+        <i class='bx bx-sun' id="darkLight"></i>
+        <i class='bx bx-bell' ></i>
+        <img src="logo1.png" alt="" class="profile" />
+      </div>
+    </nav>
+
+    <!-- sidebar -->
+    <nav class="sidebar">
+      <div class="menu_content">
+        <ul class="menu_items">
+          <div class="menu_title menu_dahsboard"></div>
+          <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+          <!-- start -->
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-home-alt"></i>
+              </span>
+              <span class="navlink">Accueil</span>
+              
+            </div>
+            
+            
+          </li>
+          <!-- end -->
+
+          <!-- duplicate this li tag if you want to add or remove  navlink with submenu -->
+          <!-- start -->
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-grid-alt"></i>
+              </span>
+              <span class="navlink">Statistiques</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+
+            <ul class="menu_items submenu">
+              <a href="rapport1.html" class="nav_link sublink">Rapport Power BI 1</a>
+              <a href="rapport2.html" class="nav_link sublink">Rapport Power BI 2</a>
+              
+            </ul>
+          </li>
+          <!-- end -->
+        </ul>
+
+        <ul class="menu_items">
+          <div class="menu_title menu_editor"></div>
+          <!-- duplicate these li tag if you want to add or remove navlink only -->
+          <!-- Start -->
+          <li class="item">
+            <a href="service.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bxs-magic-wand"></i>
+              </span>
+              <span class="navlink"> Service
+
+               
+              </span>
+
+              
+            </a>
+          </li>
+          <!-- End -->
+
+          <li class="item">
+    <a href="ports.html" class="nav_link">
+        <span class="navlink_icon">
+            <i class="bx bx-loader-circle"></i>
+        </span>
+        <span class="navlink">Ports</span>
+    </a>
+</li>
+
+          <li class="item">
+            <a href="client.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-filter"></i>
+              </span>
+              <span class="navlink"> Rubrique Clients</span>
+            </a>
+          </li>
+         
+              <span style="color: var(--footer-color);"class="navlink">APIP</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="historique.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-layer"></i>
+              </span>
+              <span class="navlink">Historique</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Sidebar Open / Close -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Développer</span>
+            <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Effondrement</span>
+            <i class='bx bx-log-out'></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+        <h2 style="color: var(--blue-color); font-weight: bold; margin-top: 100px;  margin-left: 350px">
+       SERVICES FOURNIS PAR L'APIP
+</h2>
+    <!-- Content -->
+    <div class="content">
+       <h2>Rubrique Client</h2>
+    <p>Bienvenue dans la rubrique dédiée à nos clients. Vous trouverez ci-dessous des informations utiles pour vous aider dans vos interactions avec notre agence.</p>
+    
+    <h3>Nos Services</h3>
+    <p>L'Agence des Ports et des Installations de Pêche (A.P.I.P) offre une gamme de services aux pêcheurs, aux armateurs et à tous les acteurs du secteur maritime. Que ce soit pour l'occupation temporaire du domaine public portuaire, le séjour des bateaux dans les bassins des ports de pêche, le débarquement des produits de la mer, ou d'autres besoins, nous sommes là pour vous aider.</p>
+    
+    <h3>Tarifs et Redevances</h3>
+    <p>Consultez nos tarifs et redevances pour connaître les coûts associés à nos services. Les tarifs sont fixés par l'Arrêté du ministre de l'agriculture et du ministre des finances du 23 avril 2018. Nous sommes transparents dans nos transactions et nous nous efforçons de fournir des services de qualité à des prix compétitifs.</p>
+    
+    <h3>Contactez-nous</h3>
+    <p>N'hésitez pas à nous contacter pour toute question, demande d'information supplémentaire ou pour bénéficier de nos services. Vous pouvez nous joindre par téléphone, par e-mail ou en vous rendant directement à notre siège social au port de pêche de la Goulette.</p>
+
+      <h2>Contact</h2>
+    <p>Pour toute information complémentaire, prière contacter l'Agence des Ports et des Installations de Pêche via :</p>
+    <ul>
+        <li><strong>Adresse :</strong> Port de pêche de la Goulette 2060 BP.64</li>
+        <li><strong>Tél. :</strong> (+216)71.73.60.12, (+216)71.73.60.93, (+216)71.73.61.40, (+216)71.73.83.00, (+216)71.73.85.93</li>
+        <li><strong>Fax :</strong> (+216)71.73.53.96</li>
+        <li><strong>Email :</strong> <a href="mailto:apip@apip.com.tn">apip@apip.com.tn</a></li>
+        <li><strong>Bureau d'Ordre Central :</strong> <a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></li>
+    </ul>
+
+    <h2>Liste des Ports de Pêche de l'APIP</h2>
+     <table>
+        <thead>
+            <tr>
+                <th>Port de Pêche</th>
+                <th>N° de Tel</th>
+                <th>Adresse Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tabarka</td>
+                <td>78.67.31.12</td>
+                <td><a href="mailto:apip.tabarka@apip.com.tn">apip.tabarka@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Zarzouna</td>
+                <td>72.59.11.90</td>
+                <td><a href="mailto:port.bizerte@apip.com.tn">port.bizerte@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Sidi Mechreg</td>
+                <td>72.59.11.90</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Menzel Abdrahmen</td>
+                <td>72.59.11.90</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Cap Zbib</td>
+                <td>72.40.69.78</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Ghar El Melh</td>
+                <td>72.44.86.22</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Kalâat Landalous</td>
+                <td>71.90.01.38</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Atelier La Goulette</td>
+                <td>71.73.52.33</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>La Goulette</td>
+                <td>71.73.68.07</td>
+                <td><a href="mailto:apip.lagoulette@apip.com.tn">apip.lagoulette@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Sidi Daoud</td>
+                <td>72.29.45.28</td>
+                <td><a href="mailto:apip.sidid@apip.com.tn">apip.sidid@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Haouaria</td>
+                <td>72.27.23.93</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Kelibia</td>
+                <td>72.27.36.39</td>
+                <td><a href="mailto:apip.kelibia@apip.com.tn">apip.kelibia@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Beni Khiar</td>
+                <td>72.22.93.76</td>
+                <td><a href="mailto:port.benikhiar@apip.com.tn">port.benikhiar@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Hergla</td>
+                <td>73.25.14.64</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Sousse</td>
+                <td>73.22.58.59</td>
+                <td><a href="mailto:apip.sousse@apip.com.tn">apip.sousse@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Monastir</td>
+                <td>73.46.81.27</td>
+                <td><a href="mailto:apip.monastir@apip.com.tn">apip.monastir@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Ksibet El Mediouni</td>
+                <td>73.40.81.02</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Sayada</td>
+                <td>73.43.00.26</td>
+                <td><a href="mailto:apip.sayada@apip.com.tn">apip.sayada@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Teboulba</td>
+                <td>73.47.94.95</td>
+                <td><a href="mailto:apip.teboulba@apip.com.tn">apip.teboulba@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Bekalta</td>
+                <td>73.40.81.02</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Mahdia</td>
+                <td>73.69.53.01</td>
+                <td><a href="mailto:apip.mahdia@apip.com.tn">apip.mahdia@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Salakta</td>
+                <td>73.66.64.15</td>
+                <td><a href="mailto:apip.tabarka@apip.com.tn">apip.tabarka@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Chebba</td>
+                <td>73.64.30.44</td>
+                <td><a href="mailto:apip.chebba@apip.com.tn">apip.chebba@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Malloulech</td>
+                <td>73.64.30.44</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Louza-Louata</td>
+                <td>74.89.60.91</td>
+                <td><a href="mailto:apip.louza@apip.com.tn">apip.louza@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>El Awebed</td>
+                <td>74.90.04.12</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Kraten</td>
+                <td>74.48.74.50</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>El Attaya</td>
+                <td>74.48.44.72</td>
+                <td><a href="mailto:apip.elattaya@apip.com.tn">apip.elattaya@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Sfax</td>
+                <td>74.49.78.88</td>
+                <td><a href="mailto:apip.sfax@apip.com.tn">apip.sfax@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Mahres</td>
+                <td>74.29.05.43</td>
+                <td><a href="mailto:apip.mahres@apip.com.tn">apip.mahres@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Zabboussa</td>
+                <td>74.29.54.39</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Skhira</td>
+                <td>74.29.54.39</td>
+                <td><a href="mailto:apip.skhira@apip.com.tn">apip.skhira@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Gabes</td>
+                <td>75.27.73.10</td>
+                <td><a href="mailto:apip.gabes@apip.com.tn">apip.gabes@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Zarrat</td>
+                <td>75.30.03.32</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Houmet Essouk</td>
+                <td>75.65.01.35</td>
+                <td><a href="mailto:apip.houmetsouk@apip.com.tn">apip.houmetsouk@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Aghir</td>
+                <td>75.65.01.35</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Ajim</td>
+                <td>75.66.00.02</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>El Grin</td>
+                <td>75.66.00.02</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Hassi Jallaba</td>
+                <td>75.90.05.42</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Boughrara</td>
+                <td>75.63.30.08</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>Zarzis</td>
+                <td>75.69.43.05</td>
+                <td><a href="mailto:apip.zarzis@apip.com.tn">apip.zarzis@apip.com.tn</a></td>
+            </tr>
+            <tr>
+                <td>El Ketf</td>
+                <td>75.71.39.37</td>
+                <td><a href="mailto:bocapip@apip.com.tn">bocapip@apip.com.tn</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Horaires de travail</h2>
+    <h3>Pendant l’hiver :</h3>
+    <ul>
+        <li><strong>Au niveau du siège social :</strong></li>
+        <ul>
+            <li>Lundi au Jeudi : de 08:00 à 12:30 et de 13:15 à 16:45</li>
+            <li>Vendredi : de 08:15 à 12:30 et de 13:30 à 16:45</li>
+        </ul>
+        <li><strong>Au niveau des ports :</strong></li>
+        <ul>
+            <li>Lundi au Vendredi : de 08:00 à 12:30 et de 13:00 à 15:30</li>
+            <li>Samedi : de 08:00 à 13:00</li>
+        </ul>
+    </ul>
+    <h3>Pendant l’été :</h3>
+    <ul>
+        <li><strong>Au niveau du siège social :</strong></li>
+        <ul>
+            <li>Lundi au Jeudi : de 07:30 à 14:00</li>
+            <li>Vendredi : de 07:30 à 13:00</li>
+        </ul>
+        <li><strong>Au niveau des ports :</strong></li>
+        <ul>
+            <li>Lundi au Samedi : de 07:30 à 12:45</li>
+        </ul>
+    </ul>
+
+    <h2>Moyens de Transport</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Départ</th>
+                <th>Arrivée</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Banlieue Sud bus N° 17</td>
+                <td>Port La Goulette</td>
+            </tr>
+            <tr>
+                <td>Banlieue Nord Station TGM</td>
+                <td>Métro TGM Arrêt La Goulette</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 40px 0 20px; color: var(--footer-color); font-size: 14px; font-family: Arial, sans-serif; margin-left: 100px;">
+        <p>&copy; 2024 Agence des Ports et Installations de Pêche. Tous droits réservés.</p>
+        <p><a href="#" style="color: var(--footer1-color); text-decoration: none;">Politique de confidentialité</a> | <a href="#" style="color: var(--footer1-color); text-decoration: none;">Conditions d'utilisation</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 3000); // Changez 3000ms à la valeur souhaitée pour le défilement automatique (ici 3 secondes)
+    </script>
+
+</body>
+</html>
