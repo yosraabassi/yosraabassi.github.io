@@ -203,89 +203,90 @@
 
 
 
-        <!--Start of welcome section-->
-        <section id="welcome">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="wel_header">
-                            <h2>Bienvenue sur EcoBuild Tunisia Platform</h2>
-                            <p>Découvrez notre plateforme dédiée à la construction durable et à l'innovation dans le domaine du génie civil en Tunisie.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fin de la première ligne -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="item">
-                            <div class="single_item">
-                                <div class="item_list">
-                                    <div class="welcome_icon">
-                                        <i class="fa fa-leaf"></i>
-                                    </div>
-                                    <h4>Matériaux Écologiques</h4>
-                                    <p>Promouvoir l’utilisation de matériaux respectueux de l’environnement pour des projets de construction durables.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Fin de col-md-3 -->
-                    <div class="col-md-3">
-                        <div class="item">
-                            <div class="single_item">
-                                <div class="item_list">
-                                    <div class="welcome_icon">
-                                        <i class="fa fa-refresh"></i>
-                                    </div>
-                                    <h4>Gestion des Déchets</h4>
-                                    <p>Mettre en œuvre des solutions innovantes pour recycler et réutiliser les déchets de construction.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Fin de col-md-3 -->
-                    <div class="col-md-3">
-                        <div class="item">
-                            <div class="single_item">
-                                <div class="item_list">
-                                    <div class="welcome_icon">
-                                        <i class="fa fa-tint"></i>
-                                    </div>
-                                    <h4>Économie d'Eau</h4>
-                                    <p>Développer des techniques pour optimiser l'utilisation de l'eau dans les projets de construction.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Fin de col-md-3 -->
-                    <div class="col-md-3">
-                        <div class="item">
-                            <div class="single_item">
-                                <div class="item_list">
-                                    <div class="welcome_icon">
-                                        <i class="fa fa-cog"></i>
-                                    </div>
-                                    <h4>Énergies Renouvelables</h4>
-                                    <p>Intégrer des solutions solaires et renouvelables pour alimenter les infrastructures de manière durable.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Fin de col-md-3 -->
-                </div>
-                <!-- Fin de la deuxième ligne -->
+<!-- Start of portfolio -->
+<section id="portfolio" class="text-center">
+    <div class="col-md-12">
+        <div class="portfolio_title">
+            <h2>Le projet CUBATI</h2>
+        </div>
+    </div>
+    <!-- End of col-md-12 -->
+    <div class="colum">
+        <div class="container">
+            <div class="row">
+                <form action="#portfolio_images">
+                    <ul id="portfolio_menu" class="menu portfolio_custom_menu">
+                        <li>
+                            <button data-filter="*" class="my_btn btn_active" type="button" onclick="filterImages('*')">Afficher tout</button>
+                        </li>
+                        <li>
+                            <button data-filter=".blue" class="my_btn" type="button" onclick="filterImages('blue')">Construction de pilotage</button>
+                        </li>
+                        <li>
+                            <button data-filter=".red" class="my_btn" type="button" onclick="filterImages('red')">Matériaux de construction</button>
+                        </li>
+                    </ul>
+                    <!-- End of portfolio_menu -->
+                </form>
+                <!-- End of Form -->
             </div>
-            <!-- Fin du conteneur -->
-        </section>
-        
-        <!--end of welcome section-->
+            <!-- End of row -->
+        </div>
+        <!-- End of container -->
+        <div id="portfolio_images" class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="notes">
+                        <!-- Construction de pilotage -->
+                        <div class="note blue">
+                            <div class="img_overlay">
+                                <p>Projet CUBATI : Construction de pilotage</p>
+                            </div>
+                            <img src="img/c19.jpg" alt="Projet CUBATI : Construction de pilotage">
+                        </div>
+                        <!-- Matériaux de construction -->
+                        <div class="note red">
+                            <div class="img_overlay">
+                                <p>Projet CUBATI : Matériaux de construction</p>
+                            </div>
+                            <img src="img/m1.jpg" alt="Projet CUBATI : Matériaux de construction">
+                        </div>
+                    </div>
+                    <!-- End of notes -->
+                </div>
+                <!-- End of col-lg-12 -->
+            </div>
+            <!-- End of row -->
+        </div>
+        <!-- End of container -->
+    </div>
+    <!-- End of colum -->
+</section>
+<!-- End of portfolio -->
+
+<script>
+    // Function to filter images
+    function filterImages(filterClass) {
+        const notes = document.querySelectorAll('.note');
+        notes.forEach(note => {
+            if (filterClass === '*' || note.classList.contains(filterClass)) {
+                note.style.display = 'inline-block';  // Ensure images are displayed side by side
+                note.style.width = '30%';  // Adjust width to fit multiple images in one row
+                note.style.margin = '10px';  // Add some space between images
+            } else {
+                note.style.display = 'none';
+            }
+        });
+    }
+
+    // Apply default display on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        filterImages('*');  // Display all images by default
+    });
+</script>
 
 
 
-
-
-
-        
 
 
 
