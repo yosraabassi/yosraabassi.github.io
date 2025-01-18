@@ -162,7 +162,7 @@
                                   <h2> Green Budget Platform  </h2>
                                   <p>Intégrer les changements climatiques au budget de l'État et bâtir un avenir vert.</p>
 
-                                 <a href="#" class="custom_btn">En savoir plus</a>
+                                  <a href="textes juridique green budget.pdf" class="custom_btn" target="_blank" rel="noopener noreferrer">Textes juridiques green budget</a>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +176,7 @@
                                   <h2> Green Budget Platform </h2>
                                   <p>Intégrer les changements climatiques au budget de l'État et bâtir un avenir vert.</p>
 
-                                 <a href="#" class="custom_btn">En savoir plus</a>
+                                  <a href="textes juridique green budget.pdf" class="custom_btn" target="_blank" rel="noopener noreferrer">Textes juridiques green budget</a>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +191,7 @@
                                   <h2> Green Budget Platform </h2>
                                   <p>Intégrer les changements climatiques au budget de l'État et bâtir un avenir vert.</p>
 
-                                 <a href="#" class="custom_btn">En savoir plus</a>
+                                  <a href="textes juridique green budget.pdf" class="custom_btn" target="_blank" rel="noopener noreferrer">Textes juridiques green budget</a>
                                 </div>
                             </div>
                         </div>
@@ -206,14 +206,13 @@
 
 
 
-<!--Start of portfolio-->
+<!-- Portfolio Section -->
 <section id="portfolio" class="text-center">
     <div class="col-md-12">
         <div class="portfolio_title">
             <h2>Feuille de Route</h2>
         </div>
     </div>
-    <!--End of col-md-12-->
     <div class="colum">
         <div class="container">
             <div class="row">
@@ -245,18 +244,14 @@
                             </button>
                         </li>
                         <li>
-                            <button data-filter=".suivi" class="my_btn" type="button" onclick="filterImages('suivi')">
-                                <p>Exécution et suivi post-exécution</p>
+                            <button data-filter=".evaluation" class="my_btn" type="button" onclick="filterImages('evaluation')">
+                                <p>Évaluation et suivi post-exécution</p>
                             </button>
                         </li>
                     </ul>
-                    <!--End of portfolio_menu-->
                 </form>
-                <!--End of Form-->
             </div>
-            <!--End of row-->
         </div>
-        <!--End of container-->
         <div id="portfolio_images" class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -266,72 +261,77 @@
                             <div class="img_overlay">
                                 <p>Formulation du budget</p>
                             </div>
-                            <img src="img/r1.png" alt="Maquette - Page d'accueil">
+                            <img src="img/r1.png" alt="Formulation du budget">
                         </div>
                         <!-- Discussion -->
                         <div class="note discussion">
                             <div class="img_overlay">
                                 <p>Discussion et Approbation</p>
                             </div>
-                            <img src="img/r2.png" alt="Tableau de bord">
+                            <img src="img/r2.png" alt="Discussion et Approbation">
                         </div>
                         <!-- Execution -->
                         <div class="note execution">
                             <div class="img_overlay">
                                 <p>Exécution du budget</p>
                             </div>
-                            <img src="img/r3.png" alt="API Swagger">
+                            <img src="img/r3.png" alt="Exécution du budget">
                         </div>
                         <!-- Audit -->
                         <div class="note audit">
                             <div class="img_overlay">
                                 <p>Audit et contrôle</p>
                             </div>
-                            <img src="img/r4.png" alt="Architecture">
+                            <img src="img/r4.png" alt="Audit et contrôle">
                         </div>
-                        <!-- Suivi -->
-                        <div class="note suivi">
+                        <!-- Évaluation -->
+                        <div class="note evaluation">
                             <div class="img_overlay">
-                                <p>Exécution et suivi post-exécution</p>
+                                <p>Évaluation et suivi post-exécution</p>
                             </div>
-                            <img src="img/r5.png" alt="Modèle Base de Données">
+                            <img src="img/r5.png" alt="Évaluation et suivi post-exécution">
                         </div>
                     </div>
-                    <!--End of notes-->
                 </div>
-                <!--End of col-lg-12-->
             </div>
-            <!--End of row-->
         </div>
-        <!--End of container-->
     </div>
-    <!--End of colum-->
 </section>
-<!--End of portfolio-->
 
-
-
-
+<!-- JavaScript -->
 <script>
-    // Function to filter images
     function filterImages(filterClass) {
         const notes = document.querySelectorAll('.note');
+
         notes.forEach(note => {
-            if (filterClass === '*' || note.classList.contains(filterClass)) {
-                note.style.display = 'inline-block';  // Ensure images are displayed side by side
-                note.style.width = '30%';  // Adjust width to fit multiple images in one row
-                note.style.margin = '10px';  // Add some space between images
+            const overlayText = note.querySelector('.img_overlay p');
+            const altText = note.querySelector('img').alt;
+
+            if (filterClass === '*') {
+                // Show all images
+                note.style.display = 'inline-block';
+                note.style.width = '30%';
+                note.style.margin = '10px';
+                overlayText.textContent = "Feuille de Route"; // Set overlay to 'Feuille de Route'
+            } else if (note.classList.contains(filterClass)) {
+                // Show only matching images
+                note.style.display = 'block';
+                note.style.margin = '20px auto';
+                note.style.width = '80%'; // Increased size to 80%
+                overlayText.textContent = altText; // Set overlay to the image's alt
             } else {
+                // Hide non-matching images
                 note.style.display = 'none';
             }
         });
     }
 
-    // Apply default display on page load
-    document.addEventListener("DOMContentLoaded", function() {
-        filterImages('*');  // Display all images by default
+    // Default behavior: Show all images
+    document.addEventListener("DOMContentLoaded", function () {
+        filterImages('*');
     });
 </script>
+
 
 
 
